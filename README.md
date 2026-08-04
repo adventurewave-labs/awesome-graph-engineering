@@ -165,7 +165,7 @@ The SDKs that actually let you declare a topology instead of hand-rolling one. T
 | [Pydantic AI](https://ai.pydantic.dev/) (pydantic-graph) | Python | Statically-typed node graph; each node returns the next | Pydantic Services |
 | [AWS Strands Agents](https://github.com/strands-agents/sdk-python) | Python, TS | Agents-as-tools, an explicit Graph mode, or an autonomous Swarm | AWS |
 | [Mastra](https://github.com/mastra-ai/mastra) | TypeScript | Chained/branching step graph over typed state | Mastra |
-| [ROSAN](https://github.com/adventurewave-labs/ROSAN) *(ours)* | TypeScript | Fault-tolerant hierarchical supervision, built on LangGraph | Adventure Wave Labs |
+| [ROSAN](https://github.com/adventurewave-labs/ROSAN) *(ours)* | TypeScript | Hierarchical supervision, built on LangGraph | Adventure Wave Labs |
 
 - [LangGraph](https://github.com/langchain-ai/langgraph) - The reference implementation of "agent as state graph": nodes are functions or agents, edges (including conditional ones) route a shared typed state, with native cycles and checkpointing.
 - [Microsoft Agent Framework](https://github.com/microsoft/agent-framework) - The official successor to both AutoGen and Semantic Kernel — "the next generation of both," per Microsoft. A graph-based Workflows layer of typed Executors and Edges, layered over a simpler multi-agent chat mode for looser cases.
@@ -178,7 +178,7 @@ The SDKs that actually let you declare a topology instead of hand-rolling one. T
 - [Pydantic AI — pydantic-graph](https://ai.pydantic.dev/) - Each node is a type-checked Python class whose `run()` method returns the next node, giving a fully static, validated graph; sits under a simpler high-level Agent API for basic delegation.
 - [AWS Strands Agents](https://github.com/strands-agents/sdk-python) - Four composable topology primitives in one SDK: agents-as-tools (hierarchical), an explicit deterministic Graph mode, an autonomous peer-collaboration Swarm mode, and human handoff. Deploys onto Amazon Bedrock AgentCore.
 - [Mastra](https://github.com/mastra-ai/mastra) - The leading TypeScript-native counterpart to LangGraph/CrewAI: workflows are an explicit graph built from chained and branching step operators over typed state.
-- [ROSAN](https://github.com/adventurewave-labs/ROSAN) - Fault-tolerant multi-agent orchestration with hierarchical supervision and autonomous recovery, built on LangGraph. *(ours)*
+- [ROSAN](https://github.com/adventurewave-labs/ROSAN) - Multi-agent orchestration with hierarchical supervision, built on LangGraph. *(ours)*
 
 ## Handoff & Interop Protocols
 
@@ -207,7 +207,7 @@ What keeps a graph's progress alive across a crash, a long wait on a human, or a
 Seeing the path a graph actually took at runtime — which node ran, what it cost, and where it went sideways.
 
 - [Arize Phoenix](https://github.com/Arize-ai/phoenix) - An OpenTelemetry-native tracer that auto-instruments LangGraph, CrewAI, and the OpenAI Agents SDK, capturing the real parent/child span structure a graph executed. Elastic License 2.0.
-- [CFV](https://github.com/adventurewave-labs/CFV) (Cognitive Fabric Visualizer) - 3D visualization of multi-agent reasoning as an interactive mind-graph — real-time thinking-pattern analysis over the actual conversation topology. *(ours)*
+- [CFV](https://github.com/adventurewave-labs/CFV) (Cognitive Fabric Visualizer) - 3D visualization of multi-agent reasoning as an interactive mind-graph, polling-based (not real-time yet). *(ours)*
 - [Langfuse](https://langfuse.com/) - Open-source tracing/eval platform; captures each graph run as a hierarchical span tree tied to a session ID so you can diff two runs and see exactly where control flow diverged. MIT-licensed; acquired by ClickHouse in 2026, still self-hostable.
 - [LangSmith](https://docs.langchain.com/langsmith/observability) - Renders a multi-agent run as a nested trace tree and rolls up token/dollar cost at both the parent-run and individual node level.
 - [LangSmith Studio](https://docs.langchain.com/langsmith/studio) - A visual IDE that draws your LangGraph graph as an actual node/edge diagram, highlights which nodes were traversed, and supports time-travel debugging — rewind to a prior node, edit its state, re-run. Formerly LangGraph Studio.
@@ -218,7 +218,7 @@ Seeing the path a graph actually took at runtime — which node ran, what it cos
 
 Scoring whether a topology actually works, not just whether one agent inside it can use a tool. Most "agent benchmarks" you'll see cited are the latter — worth knowing the difference before you quote a number.
 
-- [HASEB](https://github.com/adventurewave-labs/HASEB) - Holistic evaluation suite for agentic systems, scoring multi-dimensional process viability rather than a single pass/fail metric. *(ours)*
+- [HASEB](https://github.com/adventurewave-labs/HASEB) - Evaluation suite for agentic systems; current build scores a single resolve-rate metric (multi-dimensional scoring in progress). *(ours)*
 - [MASEval](https://github.com/parameterlab/MASEval) - An open-source evaluation harness — not a fixed leaderboard — for benchmarking a whole multi-agent system end-to-end: topology, prompts, and tool choices, across frameworks via adapters. New in 2026; still proving itself.
 - [MultiAgentBench](https://github.com/ulab-uiuc/MARBLE) (MARBLE) - An ACL 2025 benchmark purpose-built to score agent-team collaboration and competition — coordination protocol, planning strategy, milestone completion — across research, coding, and social-deduction scenarios.
 
