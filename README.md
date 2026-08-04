@@ -40,6 +40,8 @@ flowchart TB
     A --> B --> C --> D --> E --> F
 ```
 
+*(Prefer one image? [View the full infographic](assets/infographic.png) — patterns, stack, and stats in a single sheet.)*
+
 ## The Canon
 
 - [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents) - The foundational split between "workflows" (LLM steps through predefined code paths) and "agents" (LLMs that direct their own control flow), plus the building-block patterns — including orchestrator-workers — most graph frameworks below now implement. *(Erik Schluntz & Barry Zhang, Anthropic, Dec 2024)*
@@ -248,3 +250,4 @@ PRs welcome — one entry per PR, alphabetical within its section, format `[name
 Maintained by [Adventure Wave Labs](https://github.com/adventurewave-labs) — we also build [ROSAN](https://github.com/adventurewave-labs/ROSAN), [CFV](https://github.com/adventurewave-labs/CFV), and [HASEB](https://github.com/adventurewave-labs/HASEB).
 
 [![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](LICENSE)
+
