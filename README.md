@@ -207,7 +207,6 @@ What keeps a graph's progress alive across a crash, a long wait on a human, or a
 Seeing the path a graph actually took at runtime — which node ran, what it cost, and where it went sideways.
 
 - [Arize Phoenix](https://github.com/Arize-ai/phoenix) - An OpenTelemetry-native tracer that auto-instruments LangGraph, CrewAI, and the OpenAI Agents SDK, capturing the real parent/child span structure a graph executed. Elastic License 2.0.
-- [CFV](https://github.com/adventurewave-labs/CFV) (Cognitive Fabric Visualizer) - 3D visualization of multi-agent reasoning as an interactive mind-graph, polling-based (not real-time yet). *(ours)*
 - [Langfuse](https://langfuse.com/) - Open-source tracing/eval platform; captures each graph run as a hierarchical span tree tied to a session ID so you can diff two runs and see exactly where control flow diverged. MIT-licensed; acquired by ClickHouse in 2026, still self-hostable.
 - [LangSmith](https://docs.langchain.com/langsmith/observability) - Renders a multi-agent run as a nested trace tree and rolls up token/dollar cost at both the parent-run and individual node level.
 - [LangSmith Studio](https://docs.langchain.com/langsmith/studio) - A visual IDE that draws your LangGraph graph as an actual node/edge diagram, highlights which nodes were traversed, and supports time-travel debugging — rewind to a prior node, edit its state, re-run. Formerly LangGraph Studio.
@@ -247,7 +246,6 @@ PRs welcome — one entry per PR, alphabetical within its section, format `[name
 
 ---
 
-Maintained by [Adventure Wave Labs](https://github.com/adventurewave-labs) — we also build [ROSAN](https://github.com/adventurewave-labs/ROSAN), [CFV](https://github.com/adventurewave-labs/CFV), and [HASEB](https://github.com/adventurewave-labs/HASEB).
+Maintained by [Adventure Wave Labs](https://github.com/adventurewave-labs) — we also build [ROSAN](https://github.com/adventurewave-labs/ROSAN) and [HASEB](https://github.com/adventurewave-labs/HASEB).
 
 [![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](LICENSE)
-
