@@ -1,0 +1,48 @@
+name: Link Check
+
+# This is a links-only repo (an awesome-list) — a dead link IS a broken
+# build. Runs on every change to the list, plus a weekly schedule since
+# external repos and blogs rot on their own timeline even when every
+# link is live today.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.md"
+      - ".github/workflows/link-check.yml"
+      - "lychee.toml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "**/*.md"
+      - ".github/workflows/link-check.yml"
+      - "lychee.toml"
+  schedule:
+    - cron: "0 6 * * 1" # every Monday, 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --config lychee.toml
+            --verbose
+            --no-progress
+            './**/*.md'
+          fail: true
+        env:
+          # Authenticates GitHub link checks so a normal run doesn't trip
+          # GitHub's unauthenticated rate limit (~25 github.com links here).
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
