@@ -1,5 +1,3 @@
-<p align="center"><img src="assets/banner.svg" alt="awesome-graph-engineering — animated banner" width="100%"></p>
-
 <div align="center">
   <img src="assets/banner.svg" alt="Awesome Graph Engineering — Adventure Wave Labs" width="100%">
 </div>
